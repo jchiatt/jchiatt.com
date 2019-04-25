@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "jchiatt.com",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Public site for J.C. Hiatt",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "baseUrl": "https://jchiatt.com",
+  "author": "J.C. Hiatt",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
