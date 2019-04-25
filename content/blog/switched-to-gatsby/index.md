@@ -1,6 +1,7 @@
 ---
 title: Moved to Gatsby!
 date: "2019-04-25"
+description: "I've moved my blog to Gatsby!"
 ---
 
 Holy missing content, Batman! This blog has moved to Gatsby!
