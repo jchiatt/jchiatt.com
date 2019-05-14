@@ -1,7 +1,7 @@
 ---
-title: Worklog - May 13, 2019
-date: "2019-05-13"
-description: "What I did, what I'm doing"
+title: Worklog - May 14, 2019
+date: "2019-05-14"
+description: "First day on the new job at Echobind!"
 ---
 
 Today was my first day at [Echobind](https://echobind.com), where I have joined as a Software Engineer & Growth Manager. Most of my day was getting acquainted with the company and meeting some of the team.
