@@ -26,6 +26,12 @@ Beyond that, I'm very interested in continuing to explore chaos engineering in t
 
 To get started, [head over to the Github repo](https://github.com/jchiatt/react-chaos).
 
+## Thank You's
+
+- Huge thank you to [Mr. Kenneth Wheeler](https://twitter.com/ken_wheeler) for pairing with me a ton to get this repo ready for open source as well as converted to TypeScript. Also thanks for being a great bro. 😘
+- Thanks to [Jared Palmer](https://twitter.com/jaredpalmer) for [TSDX](https://github.com/palmerhq/tsdx) — this was a great starter to use!
+- Thanks to [Brandon Dail](https://twitter.com/aweary) and [Brian Holt](https://twitter.com/holtbt) for the inspiration!
+
 ---
 
 Here's the excellent talk from Brian:
