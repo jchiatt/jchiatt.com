@@ -1,0 +1,39 @@
+---
+title: Announcing React Chaos!
+date: "2019-07-19"
+description: "I'm so excited to announce my first open source project, React Chaos!"
+---
+
+A few months ago I read an excellent post about [Error Boundaries in React](https://aweary.dev/fault-tolerance-react/) from [Brandon Dail](https://twitter.com/aweary). In his post, Brandon discussed how you can make your React UIs more fault tolerant by spending time thinking through where to place Error Boundaries in your component tree. Towards the end of the post, he mentioned how it would be cool if there were more tools in the React community that were geared towards [Chaos Engineering](https://en.wikipedia.org/wiki/Chaos_engineering).
+
+Having been extremely impressed by the concept of chaos engineering when it was first introduced to me back in 2015, I was very inspired by this concept as it relates to the frontend. To date, chaos engineering has really been a topic discussed in the DevOps community. But just last fall at React Rally, Brian Holt painted a very interesting picture of what chaos engineering could look like in the frontend.
+
+So I made a thing.
+
+## Introducing React Chaos
+
+I've created a proof-of-concept library that will randomly break your React components by throwing errors in them. At the time of release, it's effectively just a Higher Order Component that let's you pass in how much potential for chaos you would like to occur in the wrapped component.
+
+Here's a quick demo (hosted on [Netlify](https://netlify.com) ❤️): [https://react-chaos.netlify.com/](https://react-chaos.netlify.com/)
+
+## Going Further
+
+First of all, this is my first open source library to release, so I would love feedback. I learned a lot making this project, mostly about starting an open source project and all that entails (CI, Versioning, Type Definitions, etc). I'd love as much feedback as possible so I can learn and also make this project even better. I'm still thinking through what all is possible here and what the API could look like for the next release (which I guess would technically be v1 but tbh I couldn't figure out how to reset my version on Github and npm to a development version 🤷‍♂️).
+
+Beyond that, I'm very interested in continuing to explore chaos engineering in the frontend at a broader level. I've embedded Brian Holt's talk below — I think he painted a great picture of what is possible. And as I've thought about it more and discussed it with other engineers, I think chaos engineering in the frontend _needs_ to happen but is largely unexplored so far. I plan to devote most of my focus outside of work to this area for the foreseeable future, and I would love others to join me! Let's share ideas!
+
+## Get Started
+
+To get started, [head over to the Github repo](https://github.com/jchiatt/react-chaos).
+
+## Thank You's
+
+- Huge thank you to [Mr. Kenneth Wheeler](https://twitter.com/ken_wheeler) for pairing with me a ton to get this repo ready for open source as well as converted to TypeScript. Also thanks for being a great bro. 😘
+- Thanks to [Jared Palmer](https://twitter.com/jaredpalmer) for [TSDX](https://github.com/palmerhq/tsdx) — this was a great starter to use!
+- Thanks to [Brandon Dail](https://twitter.com/aweary) and [Brian Holt](https://twitter.com/holtbt) for the inspiration!
+
+---
+
+Here's the excellent talk from Brian:
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A4_rRj-4Mv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
