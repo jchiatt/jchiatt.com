@@ -1,6 +1,6 @@
 ---
 title: Announcing React Chaos!
-date: "2019-07-22"
+date: "2019-07-19"
 description: "I'm so excited to announce my first open source project, React Chaos!"
 ---
 
