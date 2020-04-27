@@ -1,12 +1,15 @@
 {
   "name": "jchiatt.com",
-  "private": true,
-  "description": "Public site for J.C. Hiatt",
   "version": "0.1.0",
-  "baseUrl": "https://jchiatt.com",
-  "author": "J.C. Hiatt",
-  "dependencies": {},
-  "devDependencies": {},
-  "license": "MIT",
-  "scripts": {}
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "9.3.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  }
 }
