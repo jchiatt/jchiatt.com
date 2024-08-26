@@ -41,13 +41,13 @@ export default function Uses() {
       >
         <div className="space-y-20">
           <ToolsSection title="Workstation">
-            <Tool title="16” MacBook Pro, M1 Max, 64GB RAM (2021)">
-              I was using an Intel-based 16” MacBook Pro prior to this and the
-              difference is night and day. I&apos;ve never heard the fans turn
-              on a single time, even under the incredibly heavy loads I put it
-              through with our various launch simulations.
+            <Tool title="14” MacBook Pro, M1, 16GB RAM (2021)">
+              This thing has been a powerhouse! I can only imagine how snappy
+              the higher-end models must be. Moving to M1 had a few hiccups with
+              figuring out how to make certain things work in ARM, but overall
+              Rosetta 2 seems to work great and this machine is fantastic.
             </Tool>
-            <Tool title="Apple Pro Display XDR (Standard Glass)">
+            {/* <Tool title="Apple Pro Display XDR (Standard Glass)">
               The only display on the market if you want something HiDPI and
               bigger than 27”. When you&apos;re working at planetary scale,
               every pixel you can get counts.
@@ -65,10 +65,10 @@ export default function Uses() {
             <Tool title="Herman Miller Aeron Chair">
               If I&apos;m going to slouch in the worst ergonomic position
               imaginable all day, I might as well do it in an expensive chair.
-            </Tool>
+            </Tool> */}
           </ToolsSection>
           <ToolsSection title="Development tools">
-            <Tool title="Sublime Text 4">
+            {/* <Tool title="Visual Studio Code">
               I don&apos;t care if it&apos;s missing all of the fancy IDE
               features everyone else relies on, Sublime Text is still the best
               text editor ever made.
@@ -82,17 +82,17 @@ export default function Uses() {
               Great software for working with databases. Has saved me from
               building about a thousand admin interfaces for my various projects
               over the years.
-            </Tool>
+            </Tool> */}
           </ToolsSection>
           <ToolsSection title="Design">
-            <Tool title="Figma">
+            {/* <Tool title="Figma">
               We started using Figma as just a design tool but now it&apos;s
               become our virtual whiteboard for the entire company. Never would
               have expected the collaboration features to be the real hook.
-            </Tool>
+            </Tool> */}
           </ToolsSection>
           <ToolsSection title="Productivity">
-            <Tool title="Alfred">
+            {/* <Tool title="Alfred">
               It&apos;s not the newest kid on the block but it&apos;s still the
               fastest. The Sublime Text of the application launcher world.
             </Tool>
@@ -111,7 +111,7 @@ export default function Uses() {
             <Tool title="Focus">
               Simple tool for blocking distracting websites when I need to just
               do the work and get some momentum going.
-            </Tool>
+            </Tool> */}
           </ToolsSection>
         </div>
       </SimpleLayout>
