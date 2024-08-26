@@ -3,47 +3,56 @@ import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoEndOfIE from '@/images/logos/endofie.png'
+import logoMagnoliaJs from '@/images/logos/magnoliajs.png'
+import logoPartyChat from '@/images/logos/party_chat.png'
+import logoBitcoinBubbleMyth from '@/images/logos/bitcoin.png'
+import logoLearnArena from '@/images/logos/learn_arena.png'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Learn Arena',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'A competitive education platform where you can compete and win money learning to code.',
+    link: { href: 'http://learnarena.com', label: 'learnarena.com' },
+    logo: logoLearnArena,
   },
   {
-    name: 'Animaginary',
+    name: 'EndOfIE.party',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'A fun website counting down the days until Internet Explorer is no longer supported.',
+    link: { href: 'https://endofie.party', label: 'endofie.party' },
+    logo: logoEndOfIE,
   },
   {
-    name: 'HelioStream',
+    name: 'Party Chat',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'A Telnet server written in TypeScript as a take-home project during a job interview.',
+    link: {
+      href: 'https://github.com/jchiatt/telnet-chat-server',
+      label: 'github.com',
+    },
+    logo: logoPartyChat,
   },
   {
-    name: 'cosmOS',
+    name: 'MagnoliaJS',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      "A web development conference (and Mississippi's first ever tech conference) that I started and ran for the first two years.",
+    link: {
+      href: 'https://github.com/jchiatt/magnoliajs.com',
+      label: 'github.com',
+    },
+    logo: logoMagnoliaJs,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Bitcoin Bubble Myth',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'A website I built to supplement the debate between Joel Bomgar and John Mackey answering the question "Is Bitcoin a Bubble."',
+    link: {
+      href: 'https://www.bitcoinbubblemyth.com/',
+      label: 'bitcoinbubblemyth.com',
+    },
+    logo: logoBitcoinBubbleMyth,
   },
 ]
 
@@ -70,7 +79,7 @@ export default function Projects() {
       </Head>
       <SimpleLayout
         title="Things I've made trying to put my dent in the universe."
-        intro="I've worked on tons of little projects over the years but these are the ones that I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+        intro="Out of the projects I've worked on that I am allowed to talk about, here are the ones I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
       >
         <ul
           role="list"
