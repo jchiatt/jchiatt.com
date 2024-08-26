@@ -13,8 +13,8 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
+import image1 from '@/images/photos/image-1.png'
+import image2 from '@/images/photos/image-2.png'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
@@ -140,10 +140,10 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
+      company: 'Walmart',
+      title: 'Senior Software Engineer',
       logo: logoPlanetaria,
-      start: '2019',
+      start: '2021',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear(),
@@ -306,7 +306,7 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            {/* <Newsletter /> */}
             <Resume />
           </div>
         </div>
