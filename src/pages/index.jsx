@@ -8,20 +8,22 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
-  TwitterIcon,
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
+  XIcon,
 } from '@/components/SocialIcons'
-import image1 from '@/images/photos/image-1.jpg'
+import image1 from '@/images/photos/image-1.png'
 import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
+import image3 from '@/images/photos/image-3.png'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoEchobind from '@/images/logos/echobind.jpeg'
+import logoGrapple from '@/images/logos/grapple.png'
+import logoLearnArena from '@/images/logos/learn_arena.png'
+import logoTrinityApparel from '@/images/logos/trinity_apparel.png'
+import logoTuftAndNeedle from '@/images/logos/tuft_and_needle.jpeg'
+import logoWalmart from '@/images/logos/walmart.svg'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
@@ -140,35 +142,55 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'Walmart',
+      title: 'Senior Software Engineer',
+      logo: logoWalmart,
+      start: '2021',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
+      company: 'Learn Arena',
+      title: 'CTO',
+      logo: logoLearnArena,
+      start: '2022',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear(),
+      },
+    },
+    {
+      company: 'Grapple',
+      title: 'Owner / Strangler',
+      logo: logoGrapple,
+      start: '2020',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear(),
+      },
+    },
+    {
+      company: 'Tuft & Needle',
+      title: 'Senior Software Engineer',
+      logo: logoTuftAndNeedle,
+      start: '2019',
+      end: '2021',
+    },
+    {
+      company: 'Echobind',
+      title: 'Software Engineer & Growth Manager',
+      logo: logoEchobind,
+      start: '2019',
       end: '2019',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Trinity Apparel',
+      title: 'Junior Frontend Engineer',
+      logo: logoTrinityApparel,
+      start: '2018',
+      end: '2019',
     },
   ]
 
@@ -275,9 +297,9 @@ export default function Home({ articles }) {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com/jchiatt"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
+              href="https://x.com/jchiatt"
+              aria-label="Follow on X"
+              icon={XIcon}
             />
             <SocialLink
               href="https://instagram.com/jchiatt"
@@ -306,7 +328,7 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            {/* <Newsletter /> */}
             <Resume />
           </div>
         </div>
