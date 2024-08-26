@@ -46,7 +46,7 @@ export default function ArticlesIndex({ articles }) {
       </Head>
       <SimpleLayout
         title="Writing on life, liberty, and the pursuit of beautiful code."
-        intro="All of my long-form thoughts on life, liberty, faith, and programming."
+        intro="All of my long-form thoughts on life, liberty, faith, and programming. If you don't like dad jokes, this ain't the place for ya, pal."
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">

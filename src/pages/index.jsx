@@ -8,10 +8,10 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
-  TwitterIcon,
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
+  XIcon,
 } from '@/components/SocialIcons'
 import image1 from '@/images/photos/image-1.png'
 import image2 from '@/images/photos/image-2.jpg'
@@ -19,6 +19,7 @@ import image3 from '@/images/photos/image-3.png'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import logoEchobind from '@/images/logos/echobind.jpeg'
+import logoGrapple from '@/images/logos/grapple.png'
 import logoLearnArena from '@/images/logos/learn_arena.png'
 import logoTrinityApparel from '@/images/logos/trinity_apparel.png'
 import logoTuftAndNeedle from '@/images/logos/tuft_and_needle.jpeg'
@@ -161,6 +162,16 @@ function Resume() {
       },
     },
     {
+      company: 'Grapple',
+      title: 'Owner / Strangler',
+      logo: logoGrapple,
+      start: '2020',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear(),
+      },
+    },
+    {
       company: 'Tuft & Needle',
       title: 'Senior Software Engineer',
       logo: logoTuftAndNeedle,
@@ -286,9 +297,9 @@ export default function Home({ articles }) {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com/jchiatt"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
+              href="https://x.com/jchiatt"
+              aria-label="Follow on X"
+              icon={XIcon}
             />
             <SocialLink
               href="https://instagram.com/jchiatt"
