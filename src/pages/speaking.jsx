@@ -32,50 +32,43 @@ export default function Speaking() {
         <title>Speaking - J.C. Hiatt</title>
         <meta
           name="description"
-          content="I've spoken at events all around the world and been interviewed for many podcasts."
+          content="I've spoken at many meetups and conferences, and I've been interviewed for a few podcasts."
         />
       </Head>
       <SimpleLayout
-        title="I've spoken at events all around the world and been interviewed for many podcasts."
+        title="I've spoken at many meetups and conferences, and I've been interviewed for a few podcasts."
         intro="One of my favorite ways to share my ideas is live on stage, where there's so much more communication bandwidth than there is in writing, and I love podcast interviews because they give me the opportunity to answer questions instead of just present my opinions."
       >
         <div className="space-y-20">
           <SpeakingSection title="Conferences">
             <Appearance
-              href="#"
-              title="In space, no one can watch you stream — until now"
-              description="A technical deep-dive into HelioStream, the real-time streaming library I wrote for transmitting live video back to Earth."
-              event="SysConf 2021"
+              href="https://www.youtube.com/watch?v=sSlSgWA0F28"
+              title="Refactor Your Body for Better Performance"
+              description="I founded a company called DevLifts, where I helped developers get fit and live healthier lives. This talk was the story behind that."
+              event="Refactr Conference, September 2019"
               cta="Watch video"
             />
             <Appearance
-              href="#"
-              title="Lessons learned from our first product recall"
-              description="They say that if you're not embarassed by your first version, you're doing it wrong. Well when you're selling DIY space shuttle kits it turns out it's a bit more complicated."
-              event="Business of Startups 2020"
+              href="https://www.youtube.com/watch?v=ZF-XybpC5TM"
+              title="Fault Tolerance in React"
+              description="A dive into fault tolerance, chaos engineering, and how to apply these concepts to your React applications."
+              event="Jackson Area Web and App Developers, May 2019"
               cta="Watch video"
             />
           </SpeakingSection>
           <SpeakingSection title="Podcasts">
             <Appearance
-              href="#"
-              title="Using design as a competitive advantage"
-              description="How we used world-class visual design to attract a great team, win over customers, and get more press for Planetaria."
-              event="Encoding Design, July 2022"
+              href="https://www.youtube.com/watch?v=Rx8Rk-DZxBw"
+              title="JAM Performance with J.C. Hiatt of DevLifts"
+              description="How we pieced together the JAM stack and many no-code tools to build a startup lightning fast."
+              event="JAMStack Radio, April 2019"
               cta="Listen to podcast"
             />
             <Appearance
-              href="#"
-              title="Bootstrapping an aerospace company to $17M ARR"
-              description="The story of how we built one of the most promising space startups in the world without taking any capital from investors."
-              event="The Escape Velocity Show, March 2022"
-              cta="Listen to podcast"
-            />
-            <Appearance
-              href="#"
-              title="Programming your company operating system"
-              description="On the importance of creating systems and processes for running your business so that everyone on the team knows how to make the right decision no matter the situation."
-              event="How They Work Radio, September 2021"
+              href="https://www.youtube.com/watch?v=qGR0OtrHsW8"
+              title="MJS 048: J.C. Hiatt"
+              description="My appearance My JS Story, where I talked about my journey into programming and entrepreneurship."
+              event="My JS Story, November 2018"
               cta="Listen to podcast"
             />
           </SpeakingSection>
