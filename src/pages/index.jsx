@@ -162,7 +162,7 @@ function Resume() {
       },
     },
     {
-      company: 'Grapple',
+      company: 'Grapple Jiu Jitsu',
       title: 'Owner / Strangler',
       logo: logoGrapple,
       start: '2020',
