@@ -162,7 +162,7 @@ function Resume() {
       },
     },
     {
-      company: 'Grapple',
+      company: 'Grapple Jiu Jitsu',
       title: 'Owner / Strangler',
       logo: logoGrapple,
       start: '2020',
@@ -283,8 +283,7 @@ export default function Home({ articles }) {
         <meta
           name="description"
           content="I'm J.C., a software engineer and entrepreneur based in Mississippi.
-          I currently work as a software engineer, and I'm also an owner of a
-          jiu jitsu gym. I'm into liberty, protecting others, and being from
+          I love liberty, programming, jiu jitsu, and being from
           the US of A, baby."
         />
       </Head>
@@ -295,9 +294,8 @@ export default function Home({ articles }) {
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I'm J.C., a software engineer and entrepreneur based in Mississippi.
-            I currently work as a software engineer, and I'm also an owner of a
-            jiu jitsu gym. I'm into liberty, protecting others, and being from
-            the US of A, baby.
+          I love liberty, programming, jiu jitsu, and being from
+          the US of A, baby.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
