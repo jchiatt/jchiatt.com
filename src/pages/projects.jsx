@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import logoDevlifts from '@/images/logos/devlifts.jpg'
 import logoEndOfIE from '@/images/logos/endofie.png'
 import logoMagnoliaJs from '@/images/logos/magnoliajs.png'
 import logoPartyChat from '@/images/logos/party_chat.png'
@@ -43,6 +44,16 @@ const projects = [
       label: 'github.com',
     },
     logo: logoMagnoliaJs,
+  },
+  {
+    name: 'DevLifts',
+    description:
+      'A company I co-founded to help developers stay fit and live healthier lives.',
+    link: {
+      href: 'https://devlifts.io',
+      label: 'devlifts.io',
+    },
+    logo: logoDevlifts,
   },
   {
     name: 'Bitcoin Bubble Myth',
