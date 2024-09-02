@@ -1,0 +1,184 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import map from './map.webp'
+
+export const meta = {
+  author: 'J.C. Hiatt',
+  date: '2019-07-02',
+  title: "Let's re-implement JavaScript's Array.map method!",
+  description:
+    `I've been posting daily JavaScript challenges on Twitter lately, and today's challenge involves re-implementing Array.map.`,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+I've been posting daily [JavaScript challenges on Twitter](https://twitter.com/hashtag/JCsJSTips) lately, and today's challenge involves [re-implementing Array.map](https://twitter.com/jchiatt/status/1146034617646047233).
+
+This is certainly not the only solution for this, but here's my stab at it.
+
+<Image src={map} alt="" />
+
+## What does Array.map do?
+
+Full details can be found on the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), but here's the gist of things:
+
+1. `.map` lives on the `Array` prototype
+1. It returns a new Array from after calling a callback function on every element of the array on which you call it.
+1. The callback function has 3 arguments, the last two of which are optional: the current item, the current index, and the original array you called `.map` on.
+1. You can optionally pass in a second argument after the callback, which will be the `this` context to call the callback with. If you don't pass in a this context, the callback will be called with `undefined` as the `this` context.
+
+## Example of Array.map
+
+```javascript
+const exercises = [
+  "Bench Press", 
+  "Svend Press", 
+  "Chest Flyes",
+  "Kettlebell Swing",
+  "40 Yard Sprint",
+];
+
+const arr = exercises.map(item => {
+  return "mapped " + item";
+})
+
+// returns:
+[ 
+  'mapped Bench Press',
+  'mapped Svend Press',
+  'mapped Chest Flyes',
+  'mapped Kettlebell Swing',
+  'mapped 40 Yard Sprint' 
+]
+```
+
+## Re-implementing the method
+
+### 1. Set up our function with the arguments we know it will take.
+
+We know `map` accepts a callback and a `this` context. We also know that the `this` context will be set to `undefined` if one is not passed in, so we'll set a default value on that argument.
+
+```javascript
+function newMap(callback, thisArg = undefined) {
+  // more code will go here
+}
+```
+
+### 2. Exit early if there's a problem and give error messages.
+First check is to make sure `newMap` was called on an array.
+
+```javascript
+function newMap(callback, thisArg = undefined) {
+  // Ensure it called on an array.
+  if (!Array.isArray(this)) {
+    throw new TypeError('Must be called on an array');
+  }
+}
+```
+
+Next, make sure a callback was supplied since it is required.
+
+```javascript
+function newMap(callback, thisArg = undefined) {
+  // Ensure it called on an array.
+  if (!Array.isArray(this)) {
+    throw new TypeError('Must be called on an array');
+  }
+
+  // Make sure a callback was supplied.
+  if ( !callback ) {
+    throw new TypeError('undefined is not a function');
+  }
+}
+```
+
+Lastly, make sure that _if_ a callback _was_ supplied, it is a function.
+
+```javascript
+function newMap(callback, thisArg = undefined) {
+  // Ensure it called on an array.
+  if (!Array.isArray(this)) {
+    throw new TypeError('Must be called on an array');
+  }
+
+  // Ensure a callback was supplied.
+  if ( !callback ) {
+    throw new TypeError('undefined is not a function');
+  }
+
+  // Ensure the supplied callback is a function.
+  if ( typeof callback !== 'function' ) {
+    throw new TypeError(callback + " is not a function");
+  }
+}
+```
+
+### 3. Execute the callback for each item in the array.
+
+```javascript
+function newMap(callback, thisArg = undefined) {
+  // Ensure it called on an array.
+  if (!Array.isArray(this)) {
+    throw new TypeError('Must be called on an array');
+  }
+
+  // Ensure a callback was supplied.
+  if ( !callback ) {
+    throw new TypeError('undefined is not a function');
+  }
+
+  // Ensure the supplied callback is a function.
+  if ( typeof callback !== 'function' ) {
+    throw new TypeError(callback + " is not a function");
+  }
+
+  /**
+  * Make a copy of the original array, just in case the callback 
+  * does any mutations on the current value.
+  */
+  const self = Array.from(this);
+
+  // Initialize a new array to build and return.
+  let newArray = [];
+
+  // Loop through the length of the original array.
+  for (let i = 0; i < this.length; i++) {
+    /**
+    * Execute the callback with `thisArg` as the `this` context.
+    * Callback is executed with 3 arguments:
+    * self[i] is the current value
+    * i is the current index
+    * this is the original array
+    */
+    let result = callback.call(thisArg, self[i], i, this);
+
+    // Add the result of the callback to the new array.
+    newArray[i] = result;
+  }
+
+  // Return the new array.
+  return newArray;
+}
+```
+
+## Testing our new method.
+We can attach our new method to the Array prototype and test it out like this:
+
+```javascript
+Array.prototype.newMap = newMap;
+
+const arr = exercises.newMap(item => {
+  return {% raw %}`new ${item}`{% endraw %};
+})
+
+// Returns the same result as Array.map
+[ 
+  'new Bench Press',
+  'new Svend Press',
+  'new Chest Flyes',
+  'new Kettlebell Swing',
+  'new 40 Yard Sprint' 
+]
+```
+
+Interested in more tips and challenges? [Follow me on Twitter](https://twitter.com/jchiatt) and also check out my [collection of previous tips and challenges](https://repl.it/@jchiatt/JCs-JS-Tips).

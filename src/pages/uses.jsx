@@ -17,7 +17,7 @@ function ToolsSection({ children, ...props }) {
 function Tool({ title, href, children }) {
   return (
     <Card as="li">
-      <Card.Title as="h3" href={href}>
+      <Card.Title as="h3" href={href} external>
         {title}
       </Card.Title>
       <Card.Description>{children}</Card.Description>
