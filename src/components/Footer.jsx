@@ -25,6 +25,9 @@ export function Footer() {
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/speaking">Speaking</NavLink>
                 <NavLink href="/uses">Uses</NavLink>
+                <NavLink href="https://www.skool.com/dev-career-coaching/about">
+                  Coaching
+                </NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} J.C. Hiatt. All rights will be
