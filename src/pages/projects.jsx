@@ -27,8 +27,7 @@ const projects = [
   },
   {
     name: 'Party Chat',
-    description:
-      'A Telnet server written in TypeScript as a take-home project during a job interview.',
+    description: 'A Telnet chat server written in TypeScript.',
     link: {
       href: 'https://github.com/jchiatt/telnet-chat-server',
       label: 'github.com',
