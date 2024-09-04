@@ -58,6 +58,13 @@ export default function Speaking() {
           </SpeakingSection>
           <SpeakingSection title="Podcasts">
             <Appearance
+              href="https://podcasts.apple.com/us/podcast/organizing-a-conference-to-combat-brain-drain-in/id1308497805"
+              title="Organizing a Conference to Combat Brain Drain in His Hometown with J.C. Hiatt"
+              description="How I put together the conference MagnoliaJS in the town of Jackson, Mississippi to help my community and combat the growing problem of brain drain in my state."
+              event="egghead.io developer chats, July 2019"
+              cta="Listen to podcast"
+            />
+            <Appearance
               href="https://www.youtube.com/watch?v=Rx8Rk-DZxBw"
               title="JAM Performance with J.C. Hiatt of DevLifts"
               description="How we pieced together the JAM stack and many no-code tools to build a startup lightning fast."
