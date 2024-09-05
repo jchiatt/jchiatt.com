@@ -45,7 +45,8 @@ export default function About() {
         <title>About - J.C. Hiatt</title>
         <meta
           name="description"
-          content="I'm J.C. Hiatt. I live in New York City, where I design the future."
+          content="I'm J.C. Hiatt. I live in Mississippi with my beautiful
+              family, where I craft code and please the shareholders."
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
