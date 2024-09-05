@@ -1,0 +1,27 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import image from './image.png'
+
+export const meta = {
+  author: 'J.C. Hiatt',
+  date: '2024-09-05',
+  title: "What is Edge Computing?",
+  description:
+    `Edge computing is a distributed computing paradigm that brings computation and data storage closer to the location where it is needed. This article explains how edge computing works and how it can be used to improve the performance of web applications.`,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+# Write the thing
+
+<Image src={image} alt="MagnoliaJS logo." aria-hidden="true" />
+
+The term "edge computing" has been around for a long time, but recently it has gained significant attention due to the rise edge computing platforms offered by popular CDN providers like Akamai, CloudFlare, and Fastly. 
+
+Edge computing is a means of managing how computers process information in a network, especially in big, complex systems used by enterprises. It brings computation and data storage closer to the where the compute and storage are actually needed. This is in contrast to traditional centralized network models where all data processing happens in a central data center or cloud.
+
+## CDNs
+
+A very ubiquitous form of edge computing you've used: CDNs.
+
+(to be continued)

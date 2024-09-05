@@ -1,0 +1,18 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import image from './image.png'
+
+export const meta = {
+  author: 'J.C. Hiatt',
+  date: '2024-09-05',
+  title: "What is Edge Computing?",
+  description:
+    `Edge computing is a distributed computing paradigm that brings computation and data storage closer to the location where it is needed. This article explains how edge computing works and how it can be used to improve the performance of web applications.`,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+# Write the thing
+
+<Image src={image} alt="MagnoliaJS logo." aria-hidden="true" />
+

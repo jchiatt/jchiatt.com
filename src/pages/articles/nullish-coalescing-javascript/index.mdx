@@ -1,0 +1,106 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import image from './nullish-coalescing-javascript.png'
+
+export const meta = {
+  author: 'J.C. Hiatt',
+  date: '2024-09-05',
+  title: "Nullish Coalescing in JavaScript",
+  description:
+    `The nullish coalescing operator (??), introduced in ECMAScript 2020, provides a concise way to handle default values for variables that might be null or undefined.`,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+<Image src={image} alt="Nullish Coalescing in JavaScript." aria-hidden="true" />
+
+# Nullish Coalescing Operator (??)
+
+The nullish coalescing operator (`??`), introduced in [ECMAScript 2020](https://262.ecma-international.org/11.0/), provides a concise way to handle default values for variables that might be `null` or `undefined`.
+
+## Background
+
+Before the nullish coalescing operator, developers often used the logical OR operator (`||`) to provide default values. However, this approach would use the default value for any falsy value (e.g., `''`, `0`, `false`), not just `null` or `undefined`.
+
+Example using logical OR (`||`):
+
+```javascript
+const config = {
+  animationDuration: 0,
+  numberOfItems: null
+};
+
+const duration = config.animationDuration || 300;
+const items = config.numberOfItems || 10;
+
+console.log(duration); // 300 (unintended)
+console.log(items);    // 10
+```
+
+In the example above, the `duration` variable is assigned `300` instead of `0` because `0` is a falsy value. The nullish coalescing operator solves this problem by only using the default value for `null` or `undefined`.
+
+## Usage
+
+The nullish coalescing operator (`??`) returns the right-hand side operand only when the left-hand side is `null` or `undefined`, allowing for more precise control over default values.
+
+Example using nullish coalescing `(??`):
+
+```javascript
+const config = {
+  animationDuration: 0,
+  numberOfItems: null  
+};
+
+const duration = config.animationDuration ?? 300;
+const items = config.numberOfItems ?? 10;
+
+console.log(duration); // 0   (intended)
+console.log(items);    // 10
+```
+
+In the example above, the `duration` variable is assigned `0` because `config.animationDuration` is `0`, which is not `null` or `undefined`.
+
+## Situations It's Useful In
+
+### Configuration Objects
+
+Provide sensible defaults for missing or explicitly nullish properties in configuration objects.
+
+```javascript
+const config = {
+  apiKey: null,
+  timeout: 0
+};
+
+const apiKey = config.apiKey ?? 'default_api_key';
+const timeout = config.timeout ?? 5000;
+```
+
+### Function Parameters
+
+Define default values for `null` or `undefined` arguments in functions while allowing falsy values to be passed explicitly.
+
+```javascript
+function greet(name) {
+  const username = name ?? 'Anonymous';
+  console.log(`Hello, ${username}!`);
+}
+
+greet();           // Hello, Anonymous!
+greet(null);       // Hello, Anonymous!
+greet('John Doe'); // Hello, John Doe!
+```
+
+### API Responses
+
+Provide default values for potentially missing or `null` properties in API responses to avoid errors and ensure expected behavior.
+
+```javascript
+const response = {
+  data: null,
+  error: null
+};
+
+const data = response.data ?? [];
+const error = response.error ?? 'Unknown error';
+```
