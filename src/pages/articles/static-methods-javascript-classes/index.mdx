@@ -1,0 +1,87 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import image from './javascript-classes-static-methods.png'
+
+export const meta = {
+  author: 'J.C. Hiatt',
+  date: '2024-09-06',
+  title: "Static Methods in JavaScript Classes",
+  description:
+    `Static methods in JavaScript classes are methods that are called on the class itself, rather than on an instance of the class. This article explains the purpose of static methods and how to use them.`,
+  tags: ["javascript"]
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+<Image src={image} alt="Static class methods in JavaScript." aria-hidden="true" />
+
+In JavaScript, the `static` keyword allows you to define methods and properties that belong to the class itself, rather than instances of the class. This is useful for utility functions or shared data that doesn't require a specific instance.
+
+## How `static` works with `this`:
+
+Inside a `static` method, `this` refers to the class itself, not an instance of the class. This means you can use `this` to access other `static` methods and properties, but not non-static ones.
+
+Here's an example demonstrating how `static` and non-static methods interoperate:
+
+```javascript
+class Circle {
+  static PI = 3.14159;
+  
+  constructor(radius) {
+    this.radius = radius;
+  }
+  
+  getCircumference() {
+    return 2 * Circle.PI * this.radius;
+  }
+  
+  getArea() {
+    return Circle.PI * this.radius ** 2;
+  }
+  
+  static createUnitCircle() {
+    return new Circle(1);
+  }
+  
+  static printPI() {
+    console.log(`PI: ${Circle.PI}`);
+  }
+  
+  printRadius() {
+    console.log(`Radius: ${this.radius}`);
+  }
+}
+
+const circle1 = new Circle(5);
+console.log(circle1.getCircumference());  // 31.4159
+console.log(circle1.getArea());           // 78.53975
+
+const unitCircle = Circle.createUnitCircle();
+console.log(unitCircle.getCircumference());  // 6.28318
+console.log(unitCircle.getArea());           // 3.14159
+
+Circle.printPI();  // PI: 3.14159
+circle1.printRadius();  // Radius: 5
+```
+
+## Common Pitfalls
+
+### 1. Accessing instance properties from static methods:
+
+```javascript
+static printRadius() {
+  console.log(`Radius: ${this.radius}`);  // Throws an error
+}
+```
+
+This will throw an error because static methods don't have access to instance properties. To fix this, you would need to pass the instance as a parameter to the static method.
+
+### 2. Forgetting to use the class name when accessing static properties from non-static methods:
+
+```javascript
+getCircumference() {
+  return 2 * PI * this.radius;  // Throws an error
+}
+```
+
+This will throw an error because PI is a static property and needs to be accessed using the class name, like `Circle.PI`. Forgetting to use the class name is a common mistake.
