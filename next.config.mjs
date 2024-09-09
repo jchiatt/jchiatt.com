@@ -11,6 +11,15 @@ const nextConfig = {
     newNextLinkBehavior: true,
     scrollRestoration: true,
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/coaching',
+        destination: 'https://www.skool.com/dev-career-coaching/about',
+        permanent: false,
+      },
+    ]
+  },
 }
 
 const withMDX = nextMDX({
