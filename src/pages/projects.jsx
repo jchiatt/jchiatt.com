@@ -3,12 +3,13 @@ import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoDevlifts from '@/images/logos/devlifts.jpg'
+import logoDevlifts from '@/images/logos/devlifts.png'
 import logoEndOfIE from '@/images/logos/endofie.png'
 import logoMagnoliaJs from '@/images/logos/magnoliajs.png'
 import logoPartyChat from '@/images/logos/party_chat.png'
 import logoBitcoinBubbleMyth from '@/images/logos/bitcoin.png'
 import logoLearnArena from '@/images/logos/learn_arena.png'
+import logoDevCareerCoaching from '@/images/logos/dev_career_coaching.png'
 
 const projects = [
   {
@@ -17,6 +18,16 @@ const projects = [
       'A competitive education platform where you can compete and win money learning to code.',
     link: { href: 'http://learnarena.com', label: 'learnarena.com' },
     logo: logoLearnArena,
+  },
+  {
+    name: 'Dev Career Coaching',
+    description:
+      'I help aspiring and experienced developers alike get their first $100k+ job.',
+    link: {
+      href: 'https://www.skool.com/dev-career-coaching/about',
+      label: 'skool.com',
+    },
+    logo: logoDevCareerCoaching,
   },
   {
     name: 'EndOfIE.party',

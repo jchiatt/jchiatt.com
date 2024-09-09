@@ -19,7 +19,10 @@ import image3 from '@/images/photos/image-3.png'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import logoEchobind from '@/images/logos/echobind.png'
+import logoDevCareerCoaching from '@/images/logos/dev_career_coaching.png'
+import logoDevLifts from '@/images/logos/devlifts.png'
 import logoGrapple from '@/images/logos/grapple.png'
+import logoHiattConsulting from '@/images/logos/hiatt_consulting.png'
 import logoLearnArena from '@/images/logos/learn_arena.png'
 import logoTrinityApparel from '@/images/logos/trinity_apparel.png'
 import logoTuftAndNeedle from '@/images/logos/tuft_and_needle.png'
@@ -162,6 +165,36 @@ function Resume() {
       },
     },
     {
+      company: 'DevLifts',
+      title: 'Founder',
+      logo: logoDevLifts,
+      start: '2017',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear(),
+      },
+    },
+    {
+      company: 'Dev Career Coaching',
+      title: 'Coach',
+      logo: logoDevCareerCoaching,
+      start: '2024',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear(),
+      },
+    },
+    {
+      company: 'Hiatt Consulting',
+      title: 'Owner',
+      logo: logoHiattConsulting,
+      start: '2012',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear(),
+      },
+    },
+    {
       company: 'Grapple Jiu Jitsu',
       title: 'Owner / Strangler',
       logo: logoGrapple,
@@ -294,8 +327,8 @@ export default function Home({ articles }) {
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I'm J.C., a software engineer and entrepreneur based in Mississippi.
-          I love liberty, programming, jiu jitsu, and being from
-          the US of A, baby.
+            I love liberty, programming, jiu jitsu, and being from the US of A,
+            baby.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
