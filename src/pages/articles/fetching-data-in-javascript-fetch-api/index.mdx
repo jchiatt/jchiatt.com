@@ -1,0 +1,221 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import image from './fetch-api-javascript.png'
+
+export const meta = {
+  author: 'J.C. Hiatt',
+  date: '2024-09-09',
+  title: "How to Fetch Data with JavaScript Using the Fetch API",
+  description:
+    `Edge computing is a distributed computing paradigm that brings computation and data storage closer to the location where it is needed. This article explains how edge computing works and how it can be used to improve the performance of web applications.`,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+<Image src={image} alt="MagnoliaJS logo." aria-hidden="true" />
+
+One of the most common tasks in web development is fetching data from a server. Whether you're working with REST APIs, fetching dynamic content, or communicating with a backend, JavaScript provides several ways to accomplish this. Since the introduction of the **Fetch API**, making HTTP requests has become more streamlined and easier to work with than older methods like `XMLHttpRequest`.
+
+In this article, we&apos;ll cover how to use the Fetch API to retrieve data from a server, handle responses, and manage errors. We&apos;ll also explore various use cases like sending headers, dealing with JSON, and handling asynchronous behavior with `async/await`.
+
+---
+
+## What is the Fetch API?
+
+The **Fetch API** is a modern interface that allows you to make network requests similar to `XMLHttpRequest`, but with a cleaner and more powerful set of features. Fetch is promise-based, which simplifies the process of working with asynchronous requests and responses.
+
+Here's the basic syntax for a fetch request:
+
+```javascript
+fetch(url, options)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+```
+
+- `url`: The URL to send the request to.
+- `options`: An optional object to customize the request (e.g., method, headers, body).
+
+The `fetch()` function returns a **Promise** that resolves to the response. Let&apos;s break down how to use it.
+
+---
+
+## Basic Fetch Example: GET Request
+
+The most basic use of `fetch()` is to send a **GET request** to retrieve data. Let&apos;s start with an example where we fetch some JSON data from a public API:
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Parse the JSON data
+  })
+  .then(data => console.log(data)) // Handle the data
+  .catch(error => console.error('There was a problem with the fetch operation:', error));
+```
+
+In this example:
+
+1. **`fetch()`** sends a GET request to the provided URL.
+2. **`response.ok`** checks if the request was successful. If not, it throws an error.
+3. **`response.json()`** parses the response body as JSON.
+4. The parsed data is then logged to the console.
+5. **`catch()`** handles any errors that might occur during the request.
+
+---
+
+## Handling JSON Data
+
+Most modern APIs return data in JSON format. When working with JSON, it's important to parse the response before you can use the data in your JavaScript code.
+
+Here&apos;s another example where we fetch an array of posts from the JSONPlaceholder API:
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(response => response.json())
+  .then(posts => {
+    posts.forEach(post => {
+      console.log(`Title: ${post.title}`);
+    });
+  })
+  .catch(error => console.error('Error fetching posts:', error));
+```
+
+This code snippet retrieves multiple posts and logs each title to the console.
+
+---
+
+## Fetching with `async/await`
+
+The Fetch API works beautifully with **async/await**, which simplifies working with asynchronous code and makes it more readable. Let&apos;s convert the previous example to use `async/await`:
+
+```javascript
+async function fetchPosts() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const posts = await response.json();
+    posts.forEach(post => {
+      console.log(`Title: ${post.title}`);
+    });
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+  }
+}
+
+fetchPosts();
+```
+
+In this version:
+
+- **`async`** makes the function asynchronous, allowing you to use the `await` keyword.
+- **`await`** pauses the execution until the `fetch` and `response.json()` Promises are resolved.
+- Error handling is done with a `try/catch` block, which makes it easier to deal with errors.
+
+---
+
+## Sending POST Requests with Fetch
+
+To send data to a server, you can use a **POST request**. You do this by specifying the `method` in the options object and passing the data you want to send in the `body`.
+
+Here&apos;s how to send a POST request with the Fetch API:
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1
+  })
+})
+  .then(response => response.json())
+  .then(data => console.log('Success:', data))
+  .catch(error => console.error('Error:', error));
+```
+
+In this example:
+
+- We set the `method` to `'POST'`.
+- The `headers` include the `Content-Type` to indicate we're sending JSON data.
+- The `body` contains the data to send, which we serialize using `JSON.stringify()`.
+- The response is parsed and logged just like in the GET request example.
+
+---
+
+## Adding Custom Headers
+
+In some cases, you&apos;ll need to send custom headers in your requests, such as authentication tokens or content types. You can do this by using the `headers` property in the options object:
+
+```javascript
+fetch('https://api.example.com/data', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer your-token-here',
+    'Content-Type': 'application/json'
+  }
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+```
+
+This example demonstrates how to include an authorization token in the request headers.
+
+---
+
+## Handling Errors
+
+Error handling in the Fetch API is slightly different than older approaches like `XMLHttpRequest`. A request made with `fetch()` will only be rejected if there&apos;s a network failure or if the request is blocked for some reason (such as a CORS violation).
+
+However, the Fetch API does not throw an error for HTTP error statuses like `404` or `500`. You need to check the `response.ok` property to determine if the request was successful:
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts/invalid')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error('Fetch error:', error));
+```
+
+In this example, if the response status is not OK (e.g., 404 Not Found), we manually throw an error, which is then caught and handled.
+
+---
+
+## Fetching with Query Parameters
+
+When making GET requests, you might want to pass query parameters to the URL. You can simply append them to the URL as part of the query string:
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+```
+
+This example fetches posts for `userId=1`. Query parameters are part of the URL and don&apos;t require any special handling in the Fetch API.
+
+---
+
+## Conclusion
+
+The Fetch API provides a simple and flexible way to make HTTP requests in JavaScript. It replaces the old `XMLHttpRequest` with a cleaner and more modern approach, making it easier to handle requests, responses, and errors.
+
+In this article, we covered how to use the Fetch API for:
+- Making GET and POST requests.
+- Working with JSON data.
+- Handling asynchronous requests using `async/await`.
+- Sending custom headers and dealing with errors.
+
+As you work more with APIs and server-side data, the Fetch API will become an indispensable tool in your JavaScript toolkit.
